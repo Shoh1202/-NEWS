@@ -1,0 +1,478 @@
+(.venv) PS C:\Users\kasym\PycharmProjects\NEWS> cd new 
+(.venv) PS C:\Users\kasym\PycharmProjects\NEWS\new> python manage.py makemigrations
+Traceback (most recent call last):
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\manage.py", line 11, in main
+    from django.core.management import execute_from_command_line
+ModuleNotFoundError: No module named 'django'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\manage.py", line 13, in main
+    raise ImportError(
+ImportError: Couldn't import Django. Are you sure it's installed and available on your PYTHONPATH environment variable? Did you forget to activate a virtual environment?
+(.venv) PS C:\Users\kasym\PycharmProjects\NEWS\new> python -m pip --version
+pip 25.1.1 from C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\pip (python 3.12)
+(.venv) PS C:\Users\kasym\PycharmProjects\NEWS\new> python -m pip install django
+Collecting django
+  Downloading django-6.0.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting asgiref>=3.9.1 (from django)
+  Using cached asgiref-3.11.0-py3-none-any.whl.metadata (9.3 kB)
+Collecting sqlparse>=0.5.0 (from django)
+  Using cached sqlparse-0.5.5-py3-none-any.whl.metadata (4.7 kB)
+Collecting tzdata (from django)
+  Using cached tzdata-2025.3-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading django-6.0.1-py3-none-any.whl (8.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.3/8.3 MB 10.3 MB/s eta 0:00:00                                                                                                                                                        
+Using cached asgiref-3.11.0-py3-none-any.whl (24 kB)
+Using cached sqlparse-0.5.5-py3-none-any.whl (46 kB)
+Using cached tzdata-2025.3-py2.py3-none-any.whl (348 kB)
+Installing collected packages: tzdata, sqlparse, asgiref, django
+Successfully installed asgiref-3.11.0 django-6.0.1 sqlparse-0.5.5 tzdata-2025.3                                                                                                                                                     
+
+[notice] A new release of pip is available: 25.1.1 -> 25.3                                                                                                                                                                          
+[notice] To update, run: python.exe -m pip install --upgrade pip                                                                                                                                                                    
+(.venv) PS C:\Users\kasym\PycharmProjects\NEWS\new> python manage.py makemigrations
+Traceback (most recent call last):
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\core\management\__init__.py", line 443, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\core\management\__init__.py", line 417, in execute
+    django.setup()
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\apps\registry.py", line 116, in populate
+    app_config.import_models()
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\apps\config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kasym\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\news\models.py", line 51, in <module>
+    class PostCategory(models.Model):
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\news\models.py", line 52, in PostCategory
+    post=models.ForeignKey('Post')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ForeignKey.__init__() missing 1 required positional argument: 'on_delete'
+(.venv) PS C:\Users\kasym\PycharmProjects\NEWS\new> python manage.py makemigrations
+Traceback (most recent call last):
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\core\management\__init__.py", line 443, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\core\management\__init__.py", line 417, in execute
+    django.setup()
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\apps\registry.py", line 116, in populate
+    app_config.import_models()
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\apps\config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kasym\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 991, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1129, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1059, in source_to_code
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\news\models.py", line 52
+    post=models.ForeignKey('Post'on_delete=models.CASCADE)
+                           ^^^^^^^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+(.venv) PS C:\Users\kasym\PycharmProjects\NEWS\new> python manage.py makemigrations
+Traceback (most recent call last):
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\core\management\__init__.py", line 443, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\core\management\__init__.py", line 417, in execute
+    django.setup()
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\apps\registry.py", line 116, in populate
+    app_config.import_models()
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\apps\config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kasym\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\news\models.py", line 51, in <module>
+    class PostCategory(models.Model):
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\news\models.py", line 53, in PostCategory
+    category=models.ForeignKey('Category')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ForeignKey.__init__() missing 1 required positional argument: 'on_delete'
+(.venv) PS C:\Users\kasym\PycharmProjects\NEWS\new> python manage.py makemigrations
+Traceback (most recent call last):
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\manage.py", line 22, in <module>
+    main()
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\manage.py", line 18, in main
+    execute_from_command_line(sys.argv)
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\core\management\__init__.py", line 443, in execute_from_command_line
+    utility.execute()
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\core\management\__init__.py", line 417, in execute
+    django.setup()
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\apps\registry.py", line 116, in populate
+    app_config.import_models()
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\apps\config.py", line 269, in import_models
+    self.models_module = import_module(models_module_name)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kasym\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\news\models.py", line 54, in <module>
+    class Comment(models.Model):
+  File "C:\Users\kasym\PycharmProjects\NEWS\new\news\models.py", line 55, in Comment
+    post = models.ForeignKey('Post')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ForeignKey.__init__() missing 1 required positional argument: 'on_delete'
+(.venv) PS C:\Users\kasym\PycharmProjects\NEWS\new> python manage.py makemigrations
+SystemCheckError: System check identified some issues:
+
+ERRORS:
+news.Comment.post: (models.E006) The field 'post' clashes with the field 'post' from model 'news.comment'.
+(.venv) PS C:\Users\kasym\PycharmProjects\NEWS\new> python manage.py makemigrations
+Migrations for 'news':
+  news\migrations\0001_initial.py
+    + Create model Category
+    + Create model Author
+    + Create model Post
+    + Create model Comment
+    + Create model PostCategory
+(.venv) PS C:\Users\kasym\PycharmProjects\NEWS\new> python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, news, sessions
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying news.0001_initial... OK
+  Applying sessions.0001_initial... OK
+(.venv) PS C:\Users\kasym\PycharmProjects\NEWS\new> python manage.py shell  
+17 objects imported automatically (use -v 2 for details).
+
+Python 3.12.7 (tags/v3.12.7:0b05ead, Oct  1 2024, 03:06:41) [MSC v.1941 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> User.obUser.objects.create_userusername='ivan',
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'User' has no attribute 'obUser'
+>>>     password='12345'
+  File "<console>", line 1
+    password='12345'
+IndentationError: unexpected indent
+>>> User.objects.create_user(username='ivan',password='12345')
+<User: ivan>
+>>> User.objects.create_user(username='petr',password-'54321')
+  File "<console>", line 1
+    User.objects.create_user(username='petr',password-'54321')
+                                                             ^
+SyntaxError: positional argument follows keyword argument
+>>> User.objects.create_user(username='petr',password='54321')  
+<User: petr>
+>>> Author.object.create(user=user)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'Author' has no attribute 'object'. Did you mean: 'objects'?
+>>>  Author.objects.create(user=user)  
+  File "<console>", line 1
+    Author.objects.create(user=user)
+IndentationError: unexpected indent
+>>> Author.objects.create(user=user)  
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user' is not defined. Did you mean: 'User'?
+>>> Author.objects.create(user=User)   
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\db\models\query.py", line 667, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\db\models\base.py", line 566, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 391, in __set__
+    super().__set__(instance, value)
+  File "C:\Users\kasym\PycharmProjects\NEWS\.venv\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 287, in __set__
+    raise ValueError(
+ValueError: Cannot assign "<class 'django.contrib.auth.models.User'>": "Author.user" must be a "User" instance.
+>>> from django.contrib.auth import get_user_model
+>>> User = get_user_model()
+>>> user = User.objects.get(username='ivan')
+>>> author = Author.objects.create(user=user)
+>>> author.user.username
+'ivan'
+>>> user = User.objects.get(username='petr')
+>>> author = Author.objects.create(user=user)
+>>> author.user.username
+'petr'
+>>> Author.objects.count()
+2
+>>> c1=Category.object.create(topic='Новости')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'Category' has no attribute 'object'. Did you mean: 'objects'?
+>>> c1=Category.objects.create(topic='новости')
+>>> c1=Category.objects.create(topic='политика')
+>>> c2=Category.objects.create(topic='спорт')   
+>>> c3=Category.objects.create(topic='шоу бизнес')
+>>> c4=Category.objects.create(topic='экономика') 
+>>> from news.models import Post
+>>> post1=Post.objects.create(author=author, post_type=Post.PostType.NEWS, title='загаловок поста', text='текст поста....')
+>>> post2=Post.objects.create(author=author, post_type=Post.PostType.ARTCLE,title='загаловок поста', text='текст поста....')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+AttributeError: type object 'PostType' has no attribute 'ARTCLE'. Did you mean: 'ARTICLE'?
+>>>  post2=Post.objects.create(author=author, post_type=Post.PostType.ARTICLE,title='загаловок поста', text='текст поста....')
+  File "<console>", line 1
+    post2=Post.objects.create(author=author, post_type=Post.PostType.ARTICLE,title='загаловок поста', text='текст поста....')
+IndentationError: unexpected indent
+>>> post2=Post.objects.create(author=author, post_type=Post.PostType.ARTICLE,title='загаловок поста', text='текст поста....')  
+>>> post3=Post.objects.create(author=author, post_type=Post.PostType.ARTICLE,title='загаловок поста', text='текст поста....')
+>>> from news.models import PostCategory
+>>> PostCategory.objects.create(post=post1,category=c1)
+<PostCategory: PostCategory object (1)>
+>>> PostCategory.objects.create(post=post2,category=c2)  
+<PostCategory: PostCategory object (2)>
+>>> PostCategory.objects.create(post=post3,category=c2)
+<PostCategory: PostCategory object (3)>
+>>> PostCategory.objects.create(post=post4,category=c2) 
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'post4' is not defined. Did you mean: 'post1'?
+>>> from news.models import Comment
+>>> coment1=Comment.objects.create(post=post1,user=user1,texr='круто')
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user1' is not defined. Did you mean: 'user'?
+>>>  coment1=Comment.objects.create(post=post1,user=user,texr='круто')  
+  File "<console>", line 1
+    coment1=Comment.objects.create(post=post1,user=user,texr='круто')
+IndentationError: unexpected indent
+>>>  coment1=Comment.objects.create(post=post1,user=user,text='круто')  
+  File "<console>", line 1
+    coment1=Comment.objects.create(post=post1,user=user,text='круто')
+IndentationError: unexpected indent
+>>> comment1=Comment.objects.create(post=post1, user=user, text='Круто!')
+>>> comment2=Comment.objects.create(post=post2, user=user, text='Класс')  
+>>> coment3=Comment.objects.create(post=post3, user=user, text='молодцы')
+>>> comment4=Comment.objects.create(post=post2, user=user, text='ура')     
+>>> from news.models import Post
+>>> post = Post.objects.get(id=1)
+>>> Post.like
+<function Post.like at 0x0000025B25B80220>
+>>> Post.like()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+TypeError: Post.like() missing 1 required positional argument: 'self'
+>>> Post.like(self)
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'self' is not defined
+>>> Post.like      
+<function Post.like at 0x0000025B25B80220>
+>>> post.rating
+0.0
+>>> post.like()
+>>> post.rating
+1.0
+>>> post = Post.objects.get(id=2) 
+>>> post.dislike()
+>>> post.rating
+-1.0
+>>> from news.models import Author
+>>> author = Author.objects.get(id=1)
+>>> author.update_rating()
+>>> author.rating
+0
+>>> from news.models import Author
+>>> best_author=Author.objects.order_by('-rating').values('user__username','rating')
+>>> best_author=Author.objects.order_by('-rating').values('user__username','rating').first()
+>>> best_author=Author.objects.order_by('-rating').values('user__username','rating').get(id=1)
+>>> best_author=Author.objects.order_by('-rating').values('user__username','rating') .first()
+>>> Author.objects.all()
+<QuerySet [<Author: Author object (1)>, <Author: Author object (2)>]>
+>>> Author.objects.count()
+2
+>>> Author.objects.values('id', 'rating')
+<QuerySet [{'id': 1, 'rating': 0.0}, {'id': 2, 'rating': 0.0}]>
+>>> best_author = Author.objects.order_by('-rating').values('user__username', 'rating').first()
+>>> best_author
+{'user__username': 'ivan', 'rating': 0.0}
+>>> from news.models import Post
+>>> best=.select_related('author__user').order_by('-rating', '-time_add').first()          
+  File "<console>", line 1
+    best=.select_related('author__user').order_by('-rating', '-time_add').first()
+         ^
+SyntaxError: invalid syntax
+>>> best=select_related('author__user').order_by('-rating', '-time_add').first()  
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'select_related' is not defined
+>>> best=order_by('-rating', '-time_add').values('time_add', 'author__user__username', 'rating', 'title', 'text').first()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'order_by' is not defined
+>>> best=Post.objects
+KeyboardInterrupt
+>>> best=Post.objects.order_by('-rating', '-time_add').values('time_add', 'author__user__username', 'rating', 'title', 'text').first()
+>>> best
+{'time_add': datetime.datetime(2026, 1, 18, 7, 15, 1, 96595, tzinfo=datetime.timezone.utc), 'author__user__username': 'petr', 'rating': 1.0, 'title': 'загаловок поста', 'text': 'текст поста....'}
+>>> for comment in best_post.comments.all():print(
+...         comment.time,
+...         comment.user.username,
+...         comment.rating,
+...         comment.text
+...     )
+...
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'best_post' is not defined
+>>>  for comment in best_post.comments.all():print(
+  File "<console>", line 1
+    for comment in best_post.comments.all():print(
+IndentationError: unexpected indent
+>>> ...         comment.time,
+  File "<console>", line 1
+    ...         comment.time,
+                ^^^^^^^
+SyntaxError: invalid syntax
+>>> ...         comment.user.username,
+  File "<console>", line 1
+    ...         comment.user.username,
+                ^^^^^^^
+SyntaxError: invalid syntax
+>>> ...         comment.rating,
+  File "<console>", line 1
+    ...         comment.rating,
+                ^^^^^^^
+SyntaxError: invalid syntax
+>>> ...         comment.text
+  File "<console>", line 1
+    ...         comment.text
+                ^^^^^^^
+SyntaxError: invalid syntax
+>>> ...
+Ellipsis
+>>> comment in best.t.comments.all():print(
+  File "<console>", line 1
+    comment in best.t.comments.all():print(
+                                          ^
+SyntaxError: '(' was never closed
+>>> ...         comment.time,
+  File "<console>", line 1
+    ...         comment.time,
+                ^^^^^^^
+SyntaxError: invalid syntax
+>>> ...         comment.user.username,
+  File "<console>", line 1
+    ...         comment.user.username,
+                ^^^^^^^
+SyntaxError: invalid syntax
+>>> ...         comment.rating,
+  File "<console>", line 1
+    ...         comment.rating,
+                ^^^^^^^
+SyntaxError: invalid syntax
+>>> ...         comment.text
+  File "<console>", line 1
+    ...         comment.text
+                ^^^^^^^
+SyntaxError: invalid syntax
+>>> ...     )
+  File "<console>", line 1
+    ...     )
+            ^
+SyntaxError: unmatched ')'
+>>> ...for comment in best.comments.all():print(
+  File "<console>", line 1
+    ...for comment in best.comments.all():print(
+       ^^^
+SyntaxError: invalid syntax
+>>>         comment.time,
+  File "<console>", line 1
+    comment.time,
+IndentationError: unexpected indent
+>>>         comment.user.username,
+  File "<console>", line 1
+    comment.user.username,
+IndentationError: unexpected indent
+>>>         comment.rating,
+  File "<console>", line 1
+    comment.rating,
+IndentationError: unexpected indent
+>>>         comment.text
+  File "<console>", line 1
+    comment.text
+IndentationError: unexpected indent
+>>>     )
+  File "<console>", line 1
+    )
+IndentationError: unexpected indent
+>>> or comment in best.comments.all():      
+  File "<console>", line 1
+    or comment in best.comments.all():
+    ^^
+SyntaxError: invalid syntax
+>>> for comment in best.comments.all():      
+... print(comment.time, comment.user.username, comment.rating, comment.text)
+  File "<console>", line 2
+    print(comment.time, comment.user.username, comment.rating, comment.text)
+    ^^^^^
+IndentationError: expected an indented block after 'for' statement on line 1
+>>> for comment in best.comments.all():
+...     print(comment.time, comment.user.username, comment.rating, comment.text)
+... 
