@@ -1,0 +1,22 @@
+{% extends "default.html" %}
+{% load my_filters %}
+{% block title %}Новости{% endblock title %}
+
+{% block content %}
+  <h1>Все новости</h1>
+  <p>Всего новостей {% news_list|length %}</p>
+  {% if news_list %}
+      {% for post in news_list %}
+          <div>
+            <h3>
+                <a href="{% url 'news_detail' post.id %}">{{ post.title }}</a>
+            </h3>
+            <div>{{post.time_add|date:"d.m.Y"}}</div>
+            <p>{{post.text|truncatewords:20|censor}}</p>
+          </div>
+          <br>
+      {% endfor %}
+  {% else %}
+    <p>Новостей пока нет.</p>
+  {% endif %}
+{% endblock content %}
